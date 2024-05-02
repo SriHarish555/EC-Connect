@@ -56,6 +56,8 @@ react {
  */
 def enableProguardInReleaseBuilds = false
 
+
+
 /**
  * The preferred build flavor of JavaScriptCore (JSC)
  *
@@ -107,6 +109,7 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+    implementation ('androidx.media:media:1.2.0')
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
@@ -114,5 +117,7 @@ dependencies {
         implementation jscFlavor
     }
 }
+
+
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
